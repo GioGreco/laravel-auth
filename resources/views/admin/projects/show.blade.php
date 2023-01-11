@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <a class="btn btn-dark" href="{{route('admin.projects.index')}}">BACK</a>

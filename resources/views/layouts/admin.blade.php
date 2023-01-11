@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    @include('partials.admin.navbar')
     <div id="admin">
         <main>
             @yield('content')

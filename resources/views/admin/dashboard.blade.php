@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<div id="dashboard-sections" class="d-flex vh-100">
+<div id="dashboard-sections" class="d-flex">
     <a class="left d-flex justify-content-center align-items-center" href="{{ route('admin.projects.index') }}">
         <div class="home-gift-list d-flex justify-content-center align-items-center">
             <div class="unset-div d-flex justify-content-center align-items-center">
