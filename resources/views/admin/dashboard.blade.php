@@ -1,23 +1,43 @@
-@extends('layouts.app')
+@extends('layouts.clear')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="welcome-admin position-absolute">
+    <div class="d-flex justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <div class="d-flex flex-column justify-content-center align-items-center p-4">
+                <div class="welcome-admin-name">Welcome : <span class="text-danger">{{ Auth::user()->name }}</span></div>
 
-                <div class="card-body">
+                <div class="">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div id="dashboard-sections" class="d-flex vh-100">
+    <a class="left d-flex justify-content-center align-items-center" href="{{ route('admin.projects.index') }}">
+        <div class="home-gift-list d-flex justify-content-center align-items-center">
+            <div class="unset-div d-flex justify-content-center align-items-center">
+                <img src="{{Vite::asset('resources/img/new_project_single_line.png')}}" alt="new project pic">
+            </div>
+            <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
+                <h4>Tutti i progetti</h4>
+            </div>
+        </div>
+    </a>
+    <a class="right d-flex justify-content-center align-items-center" href="{{ route('admin.projects.create') }}">
+        <div class="home-new-gift d-flex justify-content-center align-items-center">
+            <div class="unset-div d-flex justify-content-center align-items-center">
+                <img src="{{Vite::asset('resources/img/new_project_single_line.png')}}" alt="new project pic">
+            </div>
+            <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
+                <h4>Aggiungi un nuovo progetto</h4>
+            </div>
+        </div>
+    </a>
 </div>
 @endsection
