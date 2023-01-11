@@ -4,7 +4,7 @@
             <a class="d-flex justify-content-center align-items-center" href="{{ route('admin.projects.index') }}">
                 <div class="home-projects-list d-flex justify-content-center align-items-center">
                     <div class="unset-div d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-list"></i>
+                        <i class="fa-solid fa-list fa-lg fa-fw"></i>
                     </div>
                     <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
                     </div>
@@ -16,7 +16,7 @@
             <a class="d-flex justify-content-center align-items-center" href="{{ route('admin.projects.create') }}">
                 <div class="home-projects-list d-flex justify-content-center align-items-center">
                     <div class="unset-div d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-plus fa-lg fa-fw"></i>
                     </div>
                     <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
                     </div>
@@ -28,7 +28,7 @@
             <a class="d-flex justify-content-center align-items-center" href="#">
                 <div class="home-projects-list d-flex justify-content-center align-items-center">
                     <div class="unset-div d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-folder-open fa-lg fa-fw"></i>
                     </div>
                     <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
                     </div>
@@ -40,7 +40,7 @@
             <a class="d-flex justify-content-center align-items-center" href="#">
                 <div class="home-projects-list d-flex justify-content-center align-items-center">
                     <div class="unset-div d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-bookmark fa-lg fa-fw"></i>
                     </div>
                     <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
                     </div>
@@ -52,7 +52,7 @@
             <a class="d-flex justify-content-center align-items-center" href="#">
                 <div class="home-projects-list d-flex justify-content-center align-items-center">
                     <div class="unset-div d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-users fa-lg fa-fw"></i>
                     </div>
                     <div class="unset-div-2 d-flex flex-column justify-content-end align-items-center p-5">
                     </div>
