@@ -15,19 +15,20 @@
             <div class="items-wrapper d-flex flex-wrap w-100">
             @foreach($projects as $project)
                     <div class="item d-flex flex-column justify-content-between align-items-center">
-                        <div class="id-title d-flex justify-content-between">
+                        <div class="id-title d-flex justify-content-between align-items-center">
                             <div>
                                 <small># :</small> <span class="fs-2">{{$project->id}}</span>
                             </div>
                             <div>
-                                <a href="{{route('admin.projects.show', $project->slug)}}" title="View Project" class="fs-2">
+                                <a href="{{route('admin.projects.show', $project->slug)}}" title="View Project" class="fs-4">
                                     {{$project->title}}
                                 </a>
                             </div>
                         </div>
-                        {{-- <div>
-                            <img src="" alt="">
-                        </div> --}}
+                        <div class="project-preview-pic">
+                            <a href="{{route('admin.projects.show', $project->slug)}}"><img src="{{Vite::asset('resources/img/new_project_single_line.png')}}" alt=""></a>
+                            <div class="pic-layover glitch"></div>
+                        </div>
                         <div>{{Str::limit($project->description,100)}}</div>
                         <div class="item-bottom d-flex justify-content-between">
                             <div class="d-flex align-items-center">
