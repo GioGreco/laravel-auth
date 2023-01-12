@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 // use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Project;
 
 use Illuminate\Support\Facades\Storage;
@@ -31,8 +32,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        // $languages = Language::all();
-        return view('admin.projects.create');
+        $categories = Category::all();
+        return view('admin.projects.create', compact('categories'));
     }
 
     /**
@@ -76,9 +77,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        // $languages = Language::all();
+        $categories = Category::all();
 
-        return view('admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project', 'categories'));
     }
 
     /**

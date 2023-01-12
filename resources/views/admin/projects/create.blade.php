@@ -3,7 +3,7 @@
 @section('content')
 
     <section id="createForm" class="d-flex justify-content-center align-items-center">
-        <form action="{{ route('admin.projects.store') }}" method="POST" class="d-flex flex-column justify-content-around align-items-center text-black create_container mt-4" enctype="multipart/form-data">
+        <form action="{{ route('admin.projects.store') }}" method="POST" class="d-flex flex-column justify-content-around align-items-center text-black create_container mt-4 text-white" enctype="multipart/form-data">
             @csrf
 
             <h1>Create new Project</h1>
@@ -29,7 +29,7 @@
                 @enderror
             </div>
 
-            {{-- <div class="form-field">
+            <div class="form-field">
                 <label for="category_id">Select category:</label>
                 <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
                     <option value="">Select category</option>
@@ -40,7 +40,7 @@
                 @error('category_id')
                     <div class="invalid-feedback">{{$message}}</div>
                 @enderror
-            </div> --}}
+            </div>
 
             <input type="submit" value="CREATE" class="btn btn-primary mt-3">
         </form>
