@@ -34,6 +34,19 @@
                 </div>
             </div>
 
+            {{-- <div class="form-field">
+                <label for="category_id">Select category:</label>
+                <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                    <option value="">Select category</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}" {{$category->id == old('category_id') ? 'selected' : ''}}>{{$category->name}}</option>
+                    @endforeach
+                </select>
+                @error('category_id')
+                    <div class="invalid-feedback">{{$message}}</div>
+                @enderror
+            </div> --}}
+
             <input type="submit" value="EDIT" class="btn btn-primary mt-3">
             <input type="reset" value="RESET" class="btn btn-warning mt-3">
 

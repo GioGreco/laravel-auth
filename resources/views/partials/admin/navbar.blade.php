@@ -25,7 +25,7 @@
             </a>
         </li>
         <li class="nav-item d-flex">
-            <a class="d-flex justify-content-center align-items-center" href="#">
+            <a class="d-flex justify-content-center align-items-center" href="{{route('admin.categories.index')}}">
                 <div class="home-projects-list d-flex justify-content-center align-items-center">
                     <div class="unset-div d-flex justify-content-center align-items-center">
                         <i class="fa-solid fa-folder-open fa-lg fa-fw"></i>
