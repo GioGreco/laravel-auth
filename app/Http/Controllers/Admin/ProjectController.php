@@ -91,7 +91,7 @@ class ProjectController extends Controller
         $slug = Project::generateSlug($request->title);
         $formData['slug'] = $slug;
 
-        if($request->hasFile('cover_image')){
+        if($request->hasFile('project_image')){
             if ($project->project_image) {
                 Storage::delete($project->project_image);
             }

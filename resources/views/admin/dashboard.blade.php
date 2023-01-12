@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-center">
         <div class="col-md-8">
             <div class="d-flex flex-column justify-content-center align-items-center p-4">
-                <div class="welcome-admin-name">Welcome : <span class="text-danger">{{ Auth::user()->name }}</span></div>
+                <div class="welcome-admin-name">Welcome to The Matrix : <span class="text-danger">{{ Auth::user()->name }}</span></div>
 
                 <div class="">
                     @if (session('status'))
