@@ -264,6 +264,7 @@ body{
 .main-content{
     padding: 0 0 100px;
     overflow-x: hidden;
+    position: relative;
 }
 //INDEX
 .index-table{
@@ -369,7 +370,9 @@ body{
     width: 100vw;
     height: 80px;
     text-align: center;
-    position: relative;
+    position: fixed;
+    bottom: 5%;
+
 
     .alert-inner{
         width: 400px;
@@ -383,6 +386,8 @@ body{
         border-radius: 20px;
         &:hover{
             transform: translate(-315px, 0);
+            background-color: lime;
+            color: black;
         }
         i{
             font-size: 2rem;
