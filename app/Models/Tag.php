@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Tag extends Model
 {
     use HasFactory;
+    // protected $fillable= ['name', 'tag_color'];
     protected $guarded = [];
 
     public static function generateSlug($name)

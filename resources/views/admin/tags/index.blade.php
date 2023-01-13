@@ -8,13 +8,12 @@
             {{ session()->get('message') }}
         </div>
     @endif
-    <form action="{{route('admin.tags.store')}}" method="post" class="addTagForm d-flex align-items-center">
+    <form action="{{route('admin.tags.store')}}" method="POST" class="d-flex flex-column align-items-center">
         @csrf
-        <div class="mb-3">
             <input type="text" name="name" id="name" class="form-control" placeholder="Add a tag name here">
             <input type="color" name="tag_color" id="tag_color" value="#45f3ff">
+            {{-- <input type="hidden" name='tag_color' id="tag_color"> --}}
             <button class="btn btn-outline-secondary" type="submit">Add</button>
-        </div>
     </form>
     <ul>
         @foreach ($tags as $tag)

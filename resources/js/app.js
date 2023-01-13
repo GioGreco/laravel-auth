@@ -121,6 +121,13 @@ if(document.getElementById('project_image') && document.getElementById('uploadPr
 
 //color-picker
 
-// if(document.getElementById('tag_color')){
-//     var color = document.getElementById('colorPicker').value;
+// if(document.getElementById('colorPicker')){
+
+//     function setColor(){
+//         let color = document.getElementById('colorPicker').value;
+
+//         document.getElementById('tag_color').value = color;
+//     }
+
+//     document.getElementById('colorPicker').addEventListener('input', setColor);
 // }
