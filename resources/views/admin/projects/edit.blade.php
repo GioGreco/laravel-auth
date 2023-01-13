@@ -47,6 +47,22 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <label for="tags" class="form-label">Tags</label>
+                <select multiple class="form-select" name="tags[]" id="tags">
+                    <option value="">Seleziona tag</option>
+                    @forelse ($tags as $tag)
+                        @if($errors->any())
+                            <option value="{{$tag->id}}" {{in_array($tag->id , old('tags[]')) ? 'selected': ''}}>{{$tag->name}}</option>
+                        @else
+                            <option value="{{$tag->id}}" {{$project->tags->contains($tag->id) ? 'selected': ''}}>{{$tag->name}}</option>
+                        @endif
+                    @empty
+                        <option value="">No tag</option>
+                    @endforelse
+                </select>
+            </div>
+
             <input type="submit" value="EDIT" class="btn btn-primary mt-3">
             <input type="reset" value="RESET" class="btn btn-warning mt-3">
 

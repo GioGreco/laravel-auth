@@ -57,6 +57,10 @@ class ProjectController extends Controller
 
         $newProject = Project::create($formData);
 
+        if($request->has('tags')){
+            $newProject->tags()->attach($request->tags);
+        }
+
         return redirect()->route('admin.projects.show', $newProject->slug);
     }
 
@@ -108,6 +112,10 @@ class ProjectController extends Controller
         }
 
         $project->update($formData);
+
+        if($request->has('tags')){
+            $project->tags()->sync($request->tags);
+        }
 
         return redirect()->route('admin.projects.index')->with('message', "$project->title updated successfully!");
     }

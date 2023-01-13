@@ -45,6 +45,18 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <label for="tags" class="form-label">Tags</label>
+                <select multiple class="form-select" name="tags[]" id="tags">
+                    <option value="">Seleziona tag</option>
+                    @forelse ($tags as $tag)
+                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                    @empty
+                        <option value="">No tag</option>
+                    @endforelse
+                </select>
+              </div>
+
             <input type="submit" value="CREATE" class="btn btn-primary mt-3">
         </form>
     </section>

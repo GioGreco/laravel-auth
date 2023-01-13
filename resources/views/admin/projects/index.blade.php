@@ -27,11 +27,20 @@
                         </div>
                         <div class="project-preview-pic">
 
-                            @if($project->project_image)
+                            {{-- @if($project->project_image)
+                            <img src="{{ asset('storage/' . $project->project_image) }}" alt="{{$project->title}}">
+                            @else
+                            <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="placeholder project image">
+                            @endif --}}
+
+                            @if(Str::startsWith($project->project_image, 'https://'))
+                            <img src="{{$project->project_image}}" alt="">
+                            @elseif(Str::startsWith($project->project_image, 'project'))
                             <img src="{{ asset('storage/' . $project->project_image) }}" alt="{{$project->title}}">
                             @else
                             <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="placeholder project image">
                             @endif
+
                             <div class="glitched-layover"></div>
                             <a href="{{route('admin.projects.show', $project->slug)}}" class="d-block pic-layover"></a>
                         </div>
@@ -47,10 +56,15 @@
                                  </form>
                                 </div>
                             </div>
-                            <div>
+                            <div class="d-flex flex-column align-items-end justify-content-around">
                                 <div>
                                     <i class="fa-solid fa-folder-open me-2"></i>
                                     {{$project->category ? $project->category->name : 'Senza categoria'}}
+                                </div>
+                                <div class="tags">
+                                    @foreach($project->tags as $tag)
+                                        <span class="tag rounded-pill text-uppercase" style="color: {{ $tag->tag_color }}; border-color: {{ $tag->tag_color }}">{{$tag->name}}</span>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
