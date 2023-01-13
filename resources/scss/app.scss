@@ -317,7 +317,16 @@ body{
                         top: 0;
                         height: 100%;
                         width: 100%;
-                        background-color: rgba(2, 90, 2, 0.374);
+                        background-color: rgba(0, 248, 0, 0.452);
+                        z-index: 500;
+                    }
+                    .glitched-layover{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: rgba(2, 90, 2, 0.289);
                         z-index: 500;
                         animation: noise 2s infinite linear alternate-reverse;
                     }
@@ -360,8 +369,6 @@ body{
         }
     }
 }
-
-
 //ALERT
 .custom-alert{
     background-color: transparent;

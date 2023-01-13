@@ -22,6 +22,9 @@
             </div>
 
             <div class="mb-3">
+                <div class="preview">
+                    <img id="uploadPreview" width="100" src="" alt="">
+                </div>
                 <label for="project_image">Project Img</label>
                 <input type="file" name="project_image" id="project_image" class="@error('project_image') is-invalid @enderror" >
                 @error('project_image')

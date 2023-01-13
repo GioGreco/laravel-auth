@@ -26,8 +26,14 @@
                             </div>
                         </div>
                         <div class="project-preview-pic">
-                            <a href="{{route('admin.projects.show', $project->slug)}}"><img src="{{Vite::asset('resources/img/new_project_single_line.png')}}" alt=""></a>
-                            <div class="pic-layover glitch"></div>
+
+                            @if($project->project_image)
+                            <img src="{{ asset('storage/' . $project->project_image) }}" alt="{{$project->title}}">
+                            @else
+                            <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="placeholder project image">
+                            @endif
+                            <div class="glitched-layover"></div>
+                            <a href="{{route('admin.projects.show', $project->slug)}}" class="d-block pic-layover"></a>
                         </div>
                         <div>{{Str::limit($project->description,100)}}</div>
                         <div class="item-bottom d-flex justify-content-between">
