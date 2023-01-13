@@ -37,8 +37,8 @@
             </a>
         </li>
         <li class="nav-item d-flex">
-            <a class="d-flex justify-content-center align-items-center" href="#">
-                <div class="home-projects-list d-flex justify-content-center align-items-center">
+            <a class="d-flex justify-content-center align-items-center" href="{{route('admin.tags.index')}}">
+                <div class="home-projects-list d-flex justify-content-center align-items-center {{ Route::currentRouteName() == 'admin.tags.index' ? 'active' : '' }}">
                     <div class="unset-div d-flex justify-content-center align-items-center">
                         <i class="fa-solid fa-bookmark fa-lg fa-fw"></i>
                     </div>
