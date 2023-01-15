@@ -18,7 +18,7 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 15; $i++){
             $project = new Project();
             $project->title = $faker->sentence(2);
             $project->slug = Str::slug($project->title, '-');

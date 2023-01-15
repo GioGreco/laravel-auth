@@ -103,7 +103,7 @@ if(document.querySelector('.icon-change')){
     const alertIconHTML = document.querySelector('.icon-change');
     setTimeout(()=>{
         alertIconHTML.innerHTML = `<i class="fa-solid fa-check"></i>`
-    }, 1500)
+    }, 2500)
 }
 
 //pic-preview in admin.projects.create
@@ -118,16 +118,3 @@ if(document.getElementById('project_image') && document.getElementById('uploadPr
     };
 });
 }
-
-//color-picker
-
-// if(document.getElementById('colorPicker')){
-
-//     function setColor(){
-//         let color = document.getElementById('colorPicker').value;
-
-//         document.getElementById('tag_color').value = color;
-//     }
-
-//     document.getElementById('colorPicker').addEventListener('input', setColor);
-// }

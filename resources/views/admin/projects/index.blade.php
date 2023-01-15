@@ -4,7 +4,13 @@
     @if(session()->has('message'))
         <div class="custom-alert alert alert-success mb-3 mt-3">
             <div class="alert-inner d-flex align-items-center">
-                <div class="icon-change me-4"><i class="fa-solid fa-trash"></i></div>
+                <div class="icon-change me-4">
+                    @if(Str::contains(session()->get('message'), 'deleted'))
+                    <i class="fa-solid fa-trash"></i>
+                    @else
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    @endif
+                </div>
                 {{ session()->get('message') }}
             </div>
         </div>
@@ -15,6 +21,7 @@
             <div class="items-wrapper d-flex flex-wrap w-100">
             @foreach($projects as $project)
                     <div class="item d-flex flex-column justify-content-between align-items-center">
+
                         <div class="id-title d-flex justify-content-between align-items-center">
                             <div>
                                 <small># :</small> <span class="fs-2">{{$project->id}}</span>
@@ -25,14 +32,8 @@
                                 </a>
                             </div>
                         </div>
+
                         <div class="project-preview-pic">
-
-                            {{-- @if($project->project_image)
-                            <img src="{{ asset('storage/' . $project->project_image) }}" alt="{{$project->title}}">
-                            @else
-                            <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="placeholder project image">
-                            @endif --}}
-
                             @if(Str::startsWith($project->project_image, 'https://'))
                             <img src="{{$project->project_image}}" alt="">
                             @elseif(Str::startsWith($project->project_image, 'project'))
@@ -40,11 +41,12 @@
                             @else
                             <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="placeholder project image">
                             @endif
-
                             <div class="glitched-layover"></div>
                             <a href="{{route('admin.projects.show', $project->slug)}}" class="d-block pic-layover"></a>
                         </div>
+
                         <div>{{Str::limit($project->description,100)}}</div>
+
                         <div class="item-bottom d-flex justify-content-between">
                             <div class="d-flex align-items-center">
                                 <div><a class="edit-btn d-flex justify-content-center align-items-center" href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-pen"></i></a></div>
@@ -68,9 +70,13 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
             @endforeach
             </div>
+        </div>
+        <div class="pages">
+            {{$projects->links('vendor.pagination.customPagStyle')}}
         </div>
     </section>
 

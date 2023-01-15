@@ -22,8 +22,9 @@
 
 <body>
     <div id="admin">
-        <main>
+        <main class="d-flex flex-column align-items-center">
             @include('partials.admin.navbar')
+            <div id="navbar-mask"></div>
             <div class="main-content">
                 @yield('content')
             </div>

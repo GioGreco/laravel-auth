@@ -17,8 +17,24 @@ body{
 
 //ADMIN NAVBAR
 #admin-navbar{
-    height: 200px;
-    background-color: transparent;
+    margin-bottom: 25px;
+    height: 145px;
+    position: fixed;
+    width: 80%;
+    bottom: 0;
+    z-index: 999;
+    padding: 0 12%;
+    background-color: black;
+    box-shadow: inset rgba(0, 255, 0, 0.492) 0px 5px 150px -25px,
+                inset rgba(0, 255, 0, 0.133) 0px 35px 75px -35px,
+                rgba(0, 255, 0, 0.492) 0px 5px 150px -35px,
+                rgba(0, 255, 0, 0.133) 0px 35px 75px -45px;
+    border-bottom: 12px solid lime;
+    border-right: 4px solid lime;
+    border-left: 4px solid lime;
+    border-top: 1px solid lime;
+    border-radius: 48%;
+
     ul{
         width: 100%;
         .nav-item{
@@ -30,13 +46,12 @@ body{
                     border: 3px solid #00ff00;
                     border-radius: 30px;
                     position: relative;
-
-
-                    transform: scale(0.75) rotateY(20deg) rotateX(45deg) translateZ(4.5rem);
+                    transform: scale(0.65) rotateY(20deg) rotateX(45deg) translateZ(4.5rem);
                     transform-origin: 50% 100%;
                     transform-style: preserve-3d;
                     box-shadow: 1rem 1rem 2rem rgba(0,0,0,0.25);
                     transition: 0.6s ease transform;
+                    color: lime;
 
                     &.active{
                         background-color: #00ff0075;
@@ -55,7 +70,7 @@ body{
                     }
 
                     &:hover {
-                        transform: scale(1);
+                        transform: scale(.75) translateY(-2rem);
                     }
                     &:hover .unset-div-2{
                         transform: translateZ(0);
@@ -66,7 +81,6 @@ body{
 
                     .unset-div{
                         position: absolute;
-                        color: lime;
                         font-size: 1.8rem;
                         width: 100%;
                         height: 100%;
@@ -76,12 +90,11 @@ body{
 
                         img{
                             width: 80%;
-                            filter: invert(56%) sepia(92%) saturate(2646%) hue-rotate(81deg) brightness(119%) contrast(120%);
+                            // filter: invert(56%) sepia(92%) saturate(2646%) hue-rotate(81deg) brightness(119%) contrast(120%);
                         }
                     }
 
                     .unset-div-2{
-                        color: lime;
                         position: absolute;
                         border: 3px solid lime;
                         width: 100%;
@@ -105,7 +118,6 @@ body{
                         text-align: center;
                         display: block;
                         position: absolute;
-                        color: lime;
                         transform: translateY(4.5rem);
                         opacity: 0;
                         transition: opacity .8s ease-out;
@@ -116,9 +128,17 @@ body{
     }
 
 }
+#navbar-mask{
+    height: calc(72.5px + 25px);
+    position: fixed;
+    bottom: 0;
+    // top: 0;
+    width: 85%;
+    background-color: black;
+    z-index: 998;
+}
 
 //ADMIN DASHBOARD
-
 #dashboard-sections{
     height: 100vh;
     background-color: black;
@@ -265,47 +285,48 @@ body{
     padding: 0 0 100px;
     overflow-x: hidden;
     position: relative;
+    margin-top: 50px;
+    margin-bottom: 200px;
 }
 //INDEX
 .index-table{
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
-    perspective: 300px;
+    perspective: 400px;
     .table-inner{
         transition: transform 0.5s;
         -webkit-transition: transform 0.5s;
         box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
         width: 100%;
         background-color: transparent;
-        color: lime;
+        color: rgb(0, 255, 255);
         .items-wrapper{
 
             .item{
                 width: 50%;
                 padding: 30px;
                 min-height: 500px;
-                border-bottom: 2px solid lime;
-                border-top: 2px solid lime;
+                border-bottom: 2px solid rgb(0, 255, 255);
+                color: rgb(0, 255, 255);
 
                 .id-title{
                     width: 100%;
-                    background-color: rgba(0, 255, 0, 0.197);
+                    background-color: rgba(0, 255, 255, 0.197);
                     padding: 10px 20px;
                     border-radius: 15px;
                     transform: perspective(200em) rotateX(20deg);
-
                     a{
                         text-decoration: none;
-                        color: lime;
+                        color: rgb(0, 255, 255);
                     }
                 }
                 .project-preview-pic{
                     width: 100%;
                     height: 200px;
                     overflow: hidden;
-                    background-color: #00ff00;
+                    background-color: rgb(0, 255, 255);
                     transform: perspective(200em) rotateX(20deg);
-                    box-shadow: rgba(0, 255, 0, 0.492) 0px 60px 123px -25px, rgba(0, 255, 0, 0.133) 0px 35px 75px -35px;
+                    box-shadow: rgba(0, 255, 255, 0.492) 0px 60px 123px -25px, rgba(0, 255, 255, 0.133) 0px 35px 75px -35px;
                     position: relative;
                     img{
                         height: 100%;
@@ -317,7 +338,7 @@ body{
                         top: 0;
                         height: 100%;
                         width: 100%;
-                        background-color: rgba(0, 248, 0, 0.452);
+                        background-color: rgba(0, 255, 255, 0.452);
                         z-index: 500;
                     }
                     .glitched-layover{
@@ -326,7 +347,7 @@ body{
                         top: 0;
                         height: 100%;
                         width: 100%;
-                        background-color: rgba(2, 90, 2, 0.289);
+                        background-color: rgba(0, 255, 255, 0.289);
                         z-index: 500;
                         animation: noise 2s infinite linear alternate-reverse;
                     }
@@ -336,8 +357,8 @@ body{
                     height: 60px;
                     .edit-btn{
                         display: block;
-                        border: 2px solid lime;
-                        color: lime;
+                        border: 2px solid rgb(0, 255, 255);
+                        color: rgb(0, 255, 255);
                         height: 40px;
                         width: 40px;
                         transition: all .5s ease;
@@ -348,9 +369,9 @@ body{
                         }
                     }
                     .delete-button{
-                        border: 2px solid lime;
+                        border: 2px solid rgb(0, 255, 255);
                         background-color: transparent;
-                        color: lime;
+                        color: rgb(0, 255, 255);
                         height: 40px;
                         width: 40px;
                         transition: all .5s ease;
@@ -362,12 +383,59 @@ body{
                     }
                     .tags{
                         .tag{
-                            font-size: .7rem;
+                            font-size: .5rem;
                             margin-left: 2px;
                             border: 1px solid red;
                             padding: 2px 4px;
                         }
                     }
+                }
+            }
+        }
+    }
+    .pages{
+        margin-top: 50px;
+        .pagination-info{
+            p{
+                color:rgba(0, 255, 255, 0.578);
+                span{
+                    color:rgb(0, 255, 255);
+                }
+            }
+        }
+        .pagination{
+            .page-item{
+                &:first-of-type, &:last-of-type{
+                    transform: scale(.6);
+                }
+                &.active{
+                    transform: scale(1.4);
+                    margin: 0 8px;
+                    a, span{
+                        background-color: rgb(0, 255, 255);
+                        color: black;
+                    }
+                }
+                a, span{
+                    --bs-pagination-bg: black;
+                    --bs-pagination-disabled-bg: black;
+                    --bs-pagination-active-bg: black;
+
+                    --bs-pagination-border-radius: 50%;
+
+                    --bs-pagination-padding-x: 0;
+                    --bs-pagination-padding-y: 0;
+
+                    border-radius: 50%;
+                    margin: 0 6px;
+                    height: 35px;
+                    width: 35px;
+                    border: 2px solid rgb(0, 255, 255);
+                    color: rgb(0, 255, 255);
+                    line-height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
         }
@@ -382,7 +450,9 @@ body{
     height: 80px;
     text-align: center;
     position: fixed;
-    bottom: 5%;
+    top: 5%;
+    // bottom: 5%;
+    z-index: 999;
 
 
     .alert-inner{
@@ -395,6 +465,7 @@ body{
         animation: enterFromRight 8s forwards ease-out;
         transition: transform .8s ease-in-out;
         border-radius: 20px;
+        z-index: 999;
         &:hover{
             transform: translate(-315px, 0);
             background-color: lime;
@@ -451,10 +522,11 @@ body{
         right: -330px
     }
     90%{
+        right: -330px;
         opacity: 1;
     }
     100%{
-        right: -330px;
+        right: -700px;
         opacity: 0;
     }
 }
